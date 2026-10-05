@@ -2,13 +2,13 @@
 
 A one-page driver site. Plain HTML, CSS and ES modules — no build step.
 three.js and Lenis load from jsDelivr through the import map in `index.html`;
-images and models load from `ASSET_BASE_URL` in `js/assets.js`.
+every image, texture and model lives in `assets/` (the path is `ASSET_BASE_URL` in `js/assets.js`).
 
 ## Requirements
 
 - Python 3 (only to serve the files — nothing to install, no build step)
 - A modern browser with WebGL (Chrome, Edge, Firefox, Safari)
-- An internet connection: fonts, three.js, Lenis and every image/model load from CDNs
+- An internet connection for the libraries and fonts (three.js, Lenis, the Draco decoder, Google Fonts) — all images and models are local, in `assets/`
 
 ## Run it
 
@@ -58,6 +58,7 @@ js/sections/
   footer.js                 footer copy, nav, figure parallax
 js/nav.js                   in-page nav: every nav link scrolls to its block through Lenis
 js/data/                    circuit path, map vectors, halftone dots, timeline entries
+assets/                     every image, texture and model (hero scene, UI, timeline, paddock, footer)
 ```
 
 ## Sections and nav

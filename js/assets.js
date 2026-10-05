@@ -1,7 +1,7 @@
 // Asset base URL, the visible failure banner, and <img>/mask loading.
 import { $$ } from "./engine.js";
 
-export const ASSET_BASE_URL = "https://storage.getlayers.ai/assets/kimi-04a9449ab2";
+export const ASSET_BASE_URL = "assets";
 export const asset = (path) => `${ASSET_BASE_URL}/${path}`;
 
 /* A failed asset load must be visible. */
@@ -28,7 +28,9 @@ export const loadImg = (img, path) => {
 };
 $$("img[data-src]").forEach((img) => loadImg(img, img.dataset.src));
 export const maskAsset = (prop, path) => {
-  const url = asset(path);
+  // Absolute: a relative url() inside a custom property resolves against the
+  // stylesheet that uses it (css/), not the page.
+  const url = new URL(asset(path), document.baseURI).href;
   document.documentElement.style.setProperty(prop, `url("${url}")`);
   const probe = new Image();
   probe.crossOrigin = "anonymous";
