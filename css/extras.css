@@ -1,0 +1,238 @@
+/* Next race, Store and Garage — the blocks the nav points at that the design
+   spec didn't include. Same system as the timeline/paddock/footer: one design
+   pixel is (value / 1440 * 100)cqw of the block's own width, with type floors
+   below lg. Loaded after styles.css. */
+
+.xsec {
+  container-type: inline-size;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+  --gutter: max(2.2222cqw, var(--gutter-min, 0px));
+  --cta-h: max(3.4722cqw, 44px);
+  padding: 11.7361cqw var(--gutter) 10.4167cqw;
+}
+.xsec.dark { background: var(--surface-black); color: var(--foreground-on-dark); }
+.xsec.light { background: var(--background); color: var(--foreground); }
+@media (max-width: 1023px) {
+  .xsec { --type-min: 13px; --copy-min-size: 17px; --head-min: 6.6667cqw; --gutter-min: 32px; padding-top: 18cqw; }
+}
+@media (max-width: 639px) {
+  .xsec { --head-min: 40px; --gutter-min: 24px; padding-top: 30cqw; padding-bottom: 20cqw; }
+}
+
+/* ---------- shared pieces ---------- */
+.xsec-top {
+  position: relative;
+  z-index: 31;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: max(4.4444cqw, 40px);
+}
+@media (max-width: 767px) { .xsec-top { flex-direction: column; align-items: flex-start; } }
+
+.xsec-head { font-size: max(3.8194cqw, var(--head-min, 0px)); }
+.xsec.light .xsec-head { color: var(--foreground); }
+
+.xsec-lead {
+  width: max(23.4722cqw, min(320px, 100%));
+  font-size: max(1.25cqw, var(--copy-min-size, 0px));
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+.xsec.dark .xsec-lead { color: var(--foreground-on-dark-muted); }
+
+.xsec-note {
+  font-size: max(0.8333cqw, var(--type-min, 0px));
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--foreground-on-dark-faint);
+}
+
+[data-rise] { opacity: 0; }
+
+/* Figures — the hero's stat style, scaled to the block */
+.xsec-figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border-on-dark);
+}
+.xsec-figures > div {
+  display: flex;
+  flex-direction: column;
+  gap: max(1.1111cqw, 12px);
+  padding: max(1.6667cqw, 18px) max(1.1111cqw, 12px) max(1.6667cqw, 18px) 0;
+  border-bottom: 1px solid var(--border-on-dark);
+}
+.xsec-figures dt {
+  font-size: max(0.8333cqw, var(--type-min, 0px));
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  color: var(--foreground-on-dark-muted);
+  white-space: nowrap;
+}
+.xsec-figures dd {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25em;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: max(2.6389cqw, 30px);
+  line-height: 0.72;
+  letter-spacing: -0.08em;
+}
+.xsec-figures dd .te { column-gap: 0; }
+.xsec-figures small {
+  font-family: var(--font-sans);
+  font-size: max(0.8333cqw, var(--type-min, 0px));
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+@media (max-width: 639px) { .xsec-figures { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- Next race ---------- */
+.nr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: max(4.4444cqw, 32px);
+  align-items: start;
+}
+@media (max-width: 767px) { .nr-grid { grid-template-columns: 1fr; } }
+
+.nr-map {
+  display: flex;
+  flex-direction: column;
+  gap: max(2.2222cqw, 20px);
+  padding: max(2.2222cqw, 20px) !important;
+  aspect-ratio: 1.25;
+}
+.nr-map .bc { color: var(--accent); width: max(0.6944cqw, 10px); height: max(0.6944cqw, 10px); }
+.nr-map img {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.nr-side { display: flex; flex-direction: column; gap: max(2.2222cqw, 24px); }
+
+.nr-schedule { display: flex; flex-direction: column; }
+.nr-schedule li {
+  display: grid;
+  grid-template-columns: 1fr auto 6ch;
+  gap: 1.5rem;
+  padding: max(1.1111cqw, 12px) 0;
+  border-bottom: 1px solid var(--border-on-dark);
+  font-size: max(0.9722cqw, var(--type-min, 0px));
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+.nr-schedule li span:nth-child(2) { color: var(--foreground-on-dark-muted); }
+.nr-schedule time { text-align: right; font-weight: 700; }
+.nr-schedule .is-race { color: var(--accent); }
+.nr-schedule .is-race span:nth-child(2) { color: var(--accent); }
+
+/* ---------- Store ---------- */
+.st-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: max(1.6667cqw, 16px);
+}
+@media (max-width: 1023px) { .st-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 479px) { .st-grid { grid-template-columns: 1fr; } }
+
+.st-card { display: flex; flex-direction: column; gap: max(0.8333cqw, 10px); }
+.st-card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  font-size: max(1.6667cqw, 22px);
+}
+.st-tag {
+  font-size: max(0.8333cqw, var(--type-min, 0px));
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  margin-top: max(0.5556cqw, 6px);
+}
+.st-price {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: max(1.3889cqw, 18px);
+  letter-spacing: -0.04em;
+}
+.st-add {
+  font-size: max(0.9722cqw, var(--type-min, 0px));
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-top: auto;
+}
+
+.st-art {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle, var(--map-dot) 1px, transparent 1.6px) 0 0 / 9px 9px,
+    var(--surface-black);
+  clip-path: url(#plate-clip);
+}
+.st-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-plate);
+}
+.st-card:hover .st-art img { transform: scale(1.06); }
+
+.st-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+}
+.st-big {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: max(6.6667cqw, 72px);
+  line-height: 0.72;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+  transition: transform 700ms var(--ease-plate);
+}
+@media (max-width: 1023px) { .st-big { font-size: 18cqw; } }
+@media (max-width: 479px) { .st-big { font-size: 36cqw; } }
+.st-card:hover .st-big { transform: scale(1.08); }
+.st-small {
+  font-size: max(0.8333cqw, var(--type-min, 0px));
+  text-transform: uppercase;
+  color: var(--foreground-on-dark-muted);
+}
+
+/* ---------- Garage ---------- */
+.gr-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: max(4.4444cqw, 32px);
+  align-items: center;
+}
+@media (max-width: 767px) { .gr-grid { grid-template-columns: 1fr; } }
+
+.gr-photo { position: relative; margin: 0; aspect-ratio: 710 / 462; }
+.gr-photo .plate-fill img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gr-photo:hover .plate-fill { inset: 5%; }
+
+.gr-side { display: flex; flex-direction: column; gap: max(2.2222cqw, 20px); }

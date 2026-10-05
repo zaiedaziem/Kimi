@@ -8,7 +8,7 @@ export const footer = $("#footer");
 {
   const head = buildHead($("#ft-title"));
   const logo = fade($("#ft-logo"));
-  const NAV = [["driver", "/driver"], ["season", "/season"], ["journal", "/journal"], ["next race", "/next-race"], ["store", "/store"]];
+  const NAV = [["driver", "#timeline"], ["season", "#season"], ["journal", "#paddock"], ["next race", "#next-race"], ["store", "#store"]];
   const nav = $("#ft-nav");
   const navRuns = NAV.map(([label, href]) => {
     const a = document.createElement("a");

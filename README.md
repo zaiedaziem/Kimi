@@ -38,6 +38,7 @@ Any other static server works too (`npx serve`, VS Code Live Server, GitHub Page
 ```
 index.html                  markup + import map
 css/styles.css              tokens, root font bands, every block's styles
+css/extras.css              the Next race, Store and Garage blocks
 js/main.js                  entry — imports run in page order
 js/engine.js                DOM helpers, shared ticker, Lenis, spring, text reveals, scroll triggers
 js/assets.js                asset URL, failed-asset banner, <img>/mask loading
@@ -53,6 +54,21 @@ js/sections/
   season.js                 map SVG, lap trace, halftone + reticle, standings plate
   timeline.js               rows, parallax, rail
   paddock.js                report, panels, calendar strip
+  extras.js                 Next race, Store and Garage reveals
   footer.js                 footer copy, nav, figure parallax
+js/nav.js                   in-page nav: every nav link scrolls to its block through Lenis
 js/data/                    circuit path, map vectors, halftone dots, timeline entries
 ```
+
+## Sections and nav
+
+The nav (masthead, phone menu, footer) scrolls within the page:
+
+| Link | Goes to |
+|---|---|
+| Driver | From karts to F1 (`#timeline`) |
+| Season | The season so far (`#season`) |
+| Journal | From the paddock (`#paddock`) |
+| Next race | Next race — Belgian GP (`#next-race`) |
+| Store | Team store (`#store`) |
+| Garage | The garage (`#garage`) |

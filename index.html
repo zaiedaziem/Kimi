@@ -23,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/extras.css">
 </head>
 <body>
 <div id="asset-errors" role="alert" aria-live="assertive"></div>
@@ -57,14 +58,14 @@
             <a href="/" class="logo" aria-label="Grido1 Racing Systems"><img data-src="hero/ui/grido1-logo.webp" width="424" height="97" alt=""></a>
             <nav aria-label="Primary">
               <ul>
-                <li><a class="nav-link hover-accent" href="/driver">Driver</a></li>
-                <li><a class="nav-link hover-accent" href="/season">SEASON</a></li>
-                <li><a class="nav-link hover-accent" href="/journal">journal</a></li>
-                <li><a class="nav-link hover-accent" href="/next-race">next race</a></li>
-                <li><a class="nav-link hover-accent" href="/store">store</a></li>
+                <li><a class="nav-link hover-accent" href="#timeline">Driver</a></li>
+                <li><a class="nav-link hover-accent" href="#season">SEASON</a></li>
+                <li><a class="nav-link hover-accent" href="#paddock">journal</a></li>
+                <li><a class="nav-link hover-accent" href="#next-race">next race</a></li>
+                <li><a class="nav-link hover-accent" href="#store">store</a></li>
               </ul>
             </nav>
-            <a class="nav-link garage hover-accent" href="/garage"><span aria-hidden="true">[ </span>Garage<span aria-hidden="true"> → ]</span></a>
+            <a class="nav-link garage hover-accent" href="#garage"><span aria-hidden="true">[ </span>Garage<span aria-hidden="true"> → ]</span></a>
             <button class="burger" id="burger" type="button" aria-label="Open menu" aria-haspopup="dialog" aria-expanded="false"><span></span><span></span></button>
           </header>
 
@@ -213,6 +214,114 @@
   <div class="cal" id="cal"></div>
 </section>
 
+<!-- ===================== NEXT RACE ===================== -->
+<section class="xsec dark" id="next-race" aria-labelledby="nr-title">
+  <div class="flag-band z30" data-flag="light" aria-hidden="true"><canvas></canvas></div>
+  <div class="xsec-top">
+    <h2 class="block-head xsec-head" id="nr-title" data-head="next race|belgian gp"></h2>
+    <p class="xsec-lead" data-rise>Spa-Francorchamps. Seven kilometres of forest, Eau Rouge and a first look at the Ardennes from an F1 cockpit.</p>
+  </div>
+  <div class="nr-grid">
+    <div class="nr-map bpanel" data-brackets data-rise>
+      <span class="eyebrow">round 13 · 27 jul 2026</span>
+      <img data-src="hero/ui/circuit-spa.webp" width="312" height="199" alt="Spa-Francorchamps circuit layout">
+    </div>
+    <div class="nr-side">
+      <dl class="xsec-figures nr-facts">
+        <div data-rise><dt>circuit length</dt><dd><span data-fig="7.004"></span><small>km</small></dd></div>
+        <div data-rise><dt>laps</dt><dd><span data-fig="44"></span></dd></div>
+        <div data-rise><dt>race distance</dt><dd><span data-fig="308.052"></span><small>km</small></dd></div>
+        <div data-rise><dt>corners</dt><dd><span data-fig="19"></span></dd></div>
+        <div data-rise><dt>lap record</dt><dd><span data-fig="1:46.286"></span></dd></div>
+        <div data-rise><dt>first grand prix</dt><dd><span data-fig="1950"></span></dd></div>
+      </dl>
+      <ol class="nr-schedule">
+        <li data-rise><span>practice 1</span><span>25 jul</span><time>13:30</time></li>
+        <li data-rise><span>practice 2</span><span>25 jul</span><time>17:00</time></li>
+        <li data-rise><span>practice 3</span><span>26 jul</span><time>12:30</time></li>
+        <li data-rise><span>qualifying</span><span>26 jul</span><time>16:00</time></li>
+        <li class="is-race" data-rise><span>race</span><span>27 jul</span><time>15:00</time></li>
+      </ol>
+      <p class="xsec-note" data-rise>All times CEST.</p>
+      <div data-rise>
+        <a class="btn" href="/next-race">
+          <svg class="frame" viewBox="0 0 217 50" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0.5 0.5H216.5V42L209 49.5H0.5Z" style="fill:var(--surface-black)"/>
+            <path class="flood" d="M0.5 0.5H216.5V42L209 49.5H0.5Z" style="fill:var(--accent)"/>
+            <path d="M0.5 0.5H216.5V42L209 49.5H0.5Z" fill="none" style="stroke:var(--accent)" stroke-width="1" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <span class="inner"><span class="label">race guide</span><svg class="arrow" viewBox="0 0 13.71 10.71" aria-hidden="true"><path d="M0 5.35H13M8 10.35L13 5.35L8 0.35"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STORE ===================== -->
+<section class="xsec light" id="store" aria-labelledby="st-title">
+  <div class="flag-band z30" data-flag="dark" aria-hidden="true"><canvas></canvas></div>
+  <div class="xsec-top">
+    <h2 class="block-head xsec-head" id="st-title" data-head="team|store"></h2>
+    <p class="xsec-lead" data-rise>Official rookie-season kit. Every order ships in a recycled box with a driver_012 sticker sheet.</p>
+  </div>
+  <ul class="st-grid">
+    <li class="st-card" data-rise>
+      <div class="st-art"><img data-src="footer/helmet.webp" width="1536" height="1024" alt="Half-scale replica of Kimi's helmet"></div>
+      <span class="st-tag">collector</span>
+      <h3>helmet 1:2 replica</h3>
+      <p class="st-price">€249</p>
+      <a class="st-add hover-accent" href="/store/helmet-replica"><span aria-hidden="true">[ </span>add to bag<span aria-hidden="true"> → ]</span></a>
+    </li>
+    <li class="st-card" data-rise>
+      <div class="st-art st-type" aria-hidden="true"><span class="st-big">012</span><span class="st-small">team cap</span></div>
+      <span class="st-tag">headwear</span>
+      <h3>driver_012 cap</h3>
+      <p class="st-price">€45</p>
+      <a class="st-add hover-accent" href="/store/cap"><span aria-hidden="true">[ </span>add to bag<span aria-hidden="true"> → ]</span></a>
+    </li>
+    <li class="st-card" data-rise>
+      <div class="st-art st-type" aria-hidden="true"><span class="st-big">R26</span><span class="st-small">rookie tee</span></div>
+      <span class="st-tag">apparel</span>
+      <h3>rookie season tee</h3>
+      <p class="st-price">€39</p>
+      <a class="st-add hover-accent" href="/store/tee"><span aria-hidden="true">[ </span>add to bag<span aria-hidden="true"> → ]</span></a>
+    </li>
+    <li class="st-card" data-rise>
+      <div class="st-art st-type" aria-hidden="true"><span class="st-big">KA</span><span class="st-small">paddock hoodie</span></div>
+      <span class="st-tag">apparel</span>
+      <h3>paddock hoodie</h3>
+      <p class="st-price">€89</p>
+      <a class="st-add hover-accent" href="/store/hoodie"><span aria-hidden="true">[ </span>add to bag<span aria-hidden="true"> → ]</span></a>
+    </li>
+  </ul>
+</section>
+
+<!-- ===================== GARAGE ===================== -->
+<section class="xsec dark" id="garage" aria-labelledby="gr-title">
+  <div class="flag-band z30" data-flag="light" aria-hidden="true"><canvas></canvas></div>
+  <div class="xsec-top">
+    <h2 class="block-head xsec-head" id="gr-title" data-head="the|garage"></h2>
+    <p class="xsec-lead" data-rise>Car number 12. Built to the 2026 rules: lighter, narrower, half electric and running on fully sustainable fuel.</p>
+  </div>
+  <div class="gr-grid">
+    <figure class="gr-photo" data-rise>
+      <div class="plate-fill"><img data-src="timeline/2026.webp" width="1420" height="1016" alt="The Mercedes-AMG F1 car on track"></div>
+      <svg class="plate-outline" viewBox="0 0 710.995 462.995" preserveAspectRatio="none" aria-hidden="true"><path id="gr-outline" fill="none" stroke-width="1" vector-effect="non-scaling-stroke" style="stroke:var(--timeline-outline)"/></svg>
+    </figure>
+    <div class="gr-side">
+      <span class="eyebrow" data-rise>2026 technical regulations</span>
+      <dl class="xsec-figures gr-specs">
+        <div data-rise><dt>car number</dt><dd><span data-fig="12"></span></dd></div>
+        <div data-rise><dt>minimum weight</dt><dd><span data-fig="768"></span><small>kg</small></dd></div>
+        <div data-rise><dt>max wheelbase</dt><dd><span data-fig="3400"></span><small>mm</small></dd></div>
+        <div data-rise><dt>car width</dt><dd><span data-fig="1900"></span><small>mm</small></dd></div>
+        <div data-rise><dt>mgu-k output</dt><dd><span data-fig="350"></span><small>kw</small></dd></div>
+        <div data-rise><dt>sustainable fuel</dt><dd><span data-fig="100"></span><small>%</small></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== 5 — FOOTER ===================== -->
 <section class="footer" id="footer" aria-labelledby="ft-title">
   <div class="ft-panel"><canvas data-contours="--footer-contour" aria-hidden="true"></canvas></div>
@@ -251,12 +360,12 @@
   </div>
   <nav aria-label="Menu">
     <ul id="sheet-list">
-      <li><a class="hover-accent" href="/driver">Driver</a></li>
-      <li><a class="hover-accent" href="/season">SEASON</a></li>
-      <li><a class="hover-accent" href="/journal">journal</a></li>
-      <li><a class="hover-accent" href="/next-race">next race</a></li>
-      <li><a class="hover-accent" href="/store">store</a></li>
-      <li><a class="hover-accent" href="/garage">Garage</a></li>
+      <li><a class="hover-accent" href="#timeline">Driver</a></li>
+      <li><a class="hover-accent" href="#season">SEASON</a></li>
+      <li><a class="hover-accent" href="#paddock">journal</a></li>
+      <li><a class="hover-accent" href="#next-race">next race</a></li>
+      <li><a class="hover-accent" href="#store">store</a></li>
+      <li><a class="hover-accent" href="#garage">Garage</a></li>
     </ul>
   </nav>
 </div>
