@@ -4,15 +4,34 @@ A one-page driver site. Plain HTML, CSS and ES modules — no build step.
 three.js and Lenis load from jsDelivr through the import map in `index.html`;
 images and models load from `ASSET_BASE_URL` in `js/assets.js`.
 
+## Requirements
+
+- Python 3 (only to serve the files — nothing to install, no build step)
+- A modern browser with WebGL (Chrome, Edge, Firefox, Safari)
+- An internet connection: fonts, three.js, Lenis and every image/model load from CDNs
+
 ## Run it
 
-ES modules don't load from `file://`, so serve the folder:
+The page uses ES modules, which browsers refuse to load from `file://` — so
+double-clicking `index.html` shows a blank page. Serve the folder instead.
 
-```bash
-python -m http.server 5178
-```
+1. Open a terminal in the project folder.
+2. Start a static server:
 
-Then open http://localhost:5178.
+   ```bash
+   python -m http.server 5178
+   ```
+
+   On Windows, if `python` isn't found, use the launcher:
+
+   ```bash
+   py -m http.server 5178
+   ```
+
+3. Open http://localhost:5178 in your browser.
+4. Stop the server with `Ctrl+C`.
+
+Any other static server works too (`npx serve`, VS Code Live Server, GitHub Pages).
 
 ## Layout
 
